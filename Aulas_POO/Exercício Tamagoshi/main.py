@@ -88,6 +88,7 @@ def main():
 
         if not pet.esta_vivo():
             print(f"O (a) {pet.nome} morreu...💀")
+            print(f"GAME OVER")
             break
 
 if __name__ == "__main__":
