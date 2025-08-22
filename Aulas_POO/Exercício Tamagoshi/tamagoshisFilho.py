@@ -8,25 +8,30 @@ class TamagoshiHamster(Tamagoshi):
 
     def correrNaRoda(self):
         print(f"\nO (a) {self.nome} correu muito na roda 🐹")
-        self.energia -= 10 #diminui a energia
+
         self.tedio -= 15 #diminui o tédio
+        self.energia -= 10 #diminui a energia
+        
         if self.tedio < 0: self.tedio = 0  #não deixa valor negativo
     
     def planejarFuga(self):
         print(f"\nO (a) {self.nome} está bolando um plano para fugir da gaiola ")
-        self.tedio -= 20
+        
         self.energia -= 15
-        if self.tedio < 0: self.tedio = 0
+        self.tedio -= 20
+
         if self.energia < 0: self.energia = 0
+        if self.tedio < 0: self.tedio = 0
 
     def comerSementes(self):
         print(f"\nO (a) {self.nome} está comendo muitas sementes 🌿🌻🌱")
+
         self.fome -= 20 #diminui a fome
         if self.fome < 0: self.fome = 0 #não deixa o valor negativo
 
     #mostra o status atua do bichinho
     def status(self):
-        super().status()  #mostra status padrão
+        super().status()  #mostra status padrão do tamagoshi
         print(f"\nEnergia: {self.energia}/100")  # mostra atributo extra criado para ele
 
 
@@ -38,18 +43,22 @@ class TamagoshiTubarao(Tamagoshi):
 
     def nadar(self):
         print(f"\nO (a) {self.nome} nadou muito pelo oceano e se divertiu🦈🌊")
-        self.forca -= 10 #diminui a força, porque ele se "cansa"
+        
         self.tedio -= 20 #diminui o tédio pois ele se diverte
+        self.forca -= 10 #diminui a força, porque ele se "cansa"
+
         if self.tedio < 0: self.tedio = 0 #não deixa o valor negativo
 
     def caçarPeixe(self):
         print(f"\nO (a) {self.nome} caçou um peixe e se alimentou 🐠")
+
         self.fome -= 30 #a fome diminui
         if self.fome < 0: self.fome = 0 #não deixa o valor negativo
 
     def treinarComCorrenteza(self):
+        
+        if self.tedio < 0: self.tedio = 0 #serve para deixar os valores do aatributo dentro do limites
         if self.forca > 100: self.forca = 100
-        if self.tedio < 0: self.tedio = 0
 
         print(f"\nO (a) {self.nome} nadou contra a correnteza e agora está mais forte 💪🦈​")
         print(f"\nForça atual: {self.forca}/100")
