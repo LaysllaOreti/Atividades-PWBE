@@ -1,20 +1,34 @@
 from django.shortcuts import render #Renderiza
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter
  
 #Importação do Serializer e Autor
 from .models import Autor, Editora, Livro
 from .serializers import AutorSerializers, EditoraSerializers,LivroSerializers
  
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework import status
- 
+
+from rest_framework.permissions import IsAuthenticated
+
+class AutoresView(ListCreateAPIView):
+    queryset = Autor.objects.all() 
+    serializer_class = AutorSerializers
+    permission_classes = [IsAuthenticated]
+
+    filters_backend = [DjangoFilterBackend, SearchFilter]
+    filterset_fiel = ['id']
+    search_fields = ['nome']
+
 #Serve como um post, e o list como get
 class AutoresView(ListCreateAPIView):
     #query é um tipo de busca
     #set envia
     queryset = Autor.objects.all() #Aquilo que o usuário verá, no caso todos os objetos dentro da classe Autor
     serializer_class = AutorSerializers
+    permission_classes = [IsAuthenticated]
  
 class AutoresCrud(RetrieveUpdateDestroyAPIView): #Realize o método do CRUD dentro da API
     queryset = Autor.objects.all()
@@ -65,10 +79,12 @@ def detalhes_autores(request,pk):
 class EditoraView(ListCreateAPIView):
     queryset = Editora.objects.all()
     serializer_class = EditoraSerializers #Quando buscados vem em forma de JSON
+    permission_classes = [IsAuthenticated]
  
 class EditoraCrud(RetrieveUpdateDestroyAPIView):
     queryset = Editora.objects.all()
     serializer_class = EditoraSerializers
+    permission_classes = [IsAuthenticated]
  
 #Método do CRUD dos editora
 @api_view(['GET', 'POST'])
@@ -88,6 +104,7 @@ def visualizar_editora(request):
  
 #Método para GET, PUT e DELETE
 @api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
 def detalhes_editoras(request,pk):
  
     editora = Editora.objects.get(pk=pk)
@@ -111,19 +128,19 @@ def detalhes_editoras(request,pk):
         else:
             return Response(status = status.HTTP_400_BAD_REQUEST)
  
- 
- 
- 
 class LivroView(ListCreateAPIView):
     queryset = Livro.objects.all()
     serializer_class = LivroSerializers #Quando buscados vem em forma de JSON
+    permission_classes = [IsAuthenticated]
  
 class LivroCrud(RetrieveUpdateDestroyAPIView):
     queryset = Livro.objects.all()
     serializer_class = LivroSerializers
+    permission_classes = [IsAuthenticated]
  
 #Método do CRUD dos autores
 @api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
 def visualizacao_livro(request):
     if request.method == 'GET':
         queryset = Livro.objects.all()
@@ -161,3 +178,4 @@ def detalhes_livros(request,pk):
             return Response(serializer.data, status = status.HTTP_200_OK)
         else:
             return Response(status = status.HTTP_400_BAD_REQUEST)
+

@@ -1,4 +1,5 @@
 from pathlib import Path
+from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -9,7 +10,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60), #Alterando o tempo de validade do token
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1)
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -20,7 +24,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'rest_framework',
+    'drf_yasg'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
