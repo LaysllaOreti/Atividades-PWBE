@@ -1,85 +1,35 @@
-# from http.server import SimpleHTTPRequestHandler, HTTPServer
-
-# # definindo a porta
-# port = 8000
-
-# # redefinindo o gerenciador/manipulador de requisições
-# handler = SimpleHTTPRequestHandler
-
-# # criando a instância do servidor
-# server = HTTPServer(("localhost", port), handler)
-
-# # imprimindo mensagem de o
-# print(f"Server Running in http://localhost:{port}")
-
-# server.serve_forever()
-
 import os
-from http.server import SimpleHTTPRequestHandler, HTTPServer
+from http.server import HTTPServer, SimpleHTTPRequestHandler
 
-class MyHandle (SimpleHTTPRequestHandler):
-    def list_directory(self, path):
-        try:
-            f = open(os.path.join(path, 'index.html'), 'r')
-
-            self.send_response(200)
-            self.send_header("Content-type", "text/html")
-            self.end_headers()
-            self.wfile.write(f.read().encode('utf-8'))
-            f.close()
-            return None
-        except FileNotFoundError:
-            pass
-        return super().list_directory(path)
-    
-    # Requisições do GET - Login
+class MyHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
-        if self.path == "/login":
-            try:
-                with open(os.path.join(os.getcwd(), "login.html"), 'r') as login:
-                    content = login.read()
+        routes = {
+            "/": "index.html",
+            "/login": "login.html",
+            "/cadastro": "cadastro.html",
+            "/listarFilmes": "listarFilmes.html"
+        }
 
+        file_path = routes.get(self.path, None)
+        if file_path:
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    content = f.read()
                 self.send_response(200)
                 self.send_header("Content-type", "text/html")
                 self.end_headers()
                 self.wfile.write(content.encode("utf-8"))
-
             except FileNotFoundError:
-                self.send_error(404, "File Not Found")
-
-        elif self.path == "/cadastro":
-            try:
-                with open(os.path.join(os.getcwd(), "cadastro.html"), 'r') as cadastro:
-                    content = cadastro.read()
-
-                self.send_response(200)
-                self.send_header("Content-type", "text/html")
-                self.end_headers()
-                self.wfile.write(content.encode("utf-8"))
-
-            except FileNotFoundError:
-                self.send_error(404, "File Not Found")
-
-        elif self.path == "/listarFilmes":
-            try:
-                with open(os.path.join(os.getcwd(), "listarFilmes.html"), 'r') as listarFilmes:
-                    content = listarFilmes.read()
-
-                self.send_response(200)
-                self.send_header("Content-type", "text/html")
-                self.end_headers()
-                self.wfile.write(content.encode("utf-8"))
-
-            except FileNotFoundError:
-                self.send_error(404, "File Not Found")
-            
+                self.send_error(404, f"Arquivo {file_path} não encontrado!")
         else:
+            # Se a rota não estiver definida, usa o comportamento padrão
             super().do_GET()
 
 def main():
-    server_adress = ('', 8000)
-    httpd = HTTPServer(server_adress, MyHandle)
-    print("Server Running in http://localhost:8000")
+    server_address = ("", 8000)
+    httpd = HTTPServer(server_address, MyHandler)
+    print("Server Running at http://localhost:8000")
     httpd.serve_forever()
 
-main()
+if __name__ == "__main__":
+    main()
