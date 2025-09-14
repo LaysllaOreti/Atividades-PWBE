@@ -25,7 +25,7 @@ class MyHandle (SimpleHTTPRequestHandler):
         try:
             f = open(os.path.join(path,'index.html'), 'r')
  
-            #Cabeçaho do header
+            # é o cabeçaho do header
             self.send_response(200)
             self.send_header("Content-type","text/html")
             self.end_headers    
@@ -36,7 +36,7 @@ class MyHandle (SimpleHTTPRequestHandler):
             pass
         return super().list_directory(path)
    
-    #Requisição do GET
+    # requisição do GET
     def do_GET(self):
         if self.path == "/login":
             try:

@@ -1,200 +1,183 @@
+/* reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-/*TELA DE LOGIN*/
-/* container principal */
-.containerLogin {
+body {
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #66094ac7, #ee9ce3);
+    background: linear-gradient(135deg, #f6b4d8, #9b2564);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* formulário */
-#formLogin {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 7px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+h1 {
+    color: #fef7f7;
+    font-size: 3rem;
+    padding: 20px 40px;
+}
+
+
+/*containers*/
+/* Containers de Login e Cadastro */
+.containerLogin,
+.containerCadastro {
+    padding: 0 50px;
+    border-radius: 20px;
     width: 100%;
-    max-width: 350px;
+    max-width: 700px; 
+    margin: 0 auto;
+}
+/*PÁGINA LOGIN*/
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-#formLogin fieldset {
-    border: none; 
-    padding: 0;    
-    margin: 0;          
+/* legend estilizado */
+fieldset {
+    border: none;
 }
 
-/* título do formulário */
-#formLogin legend {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1rem;
+legend {
+    font-size: 2rem;
+    color: #fff;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 /* lista do formulário */
 .listaFormulario {
     list-style: none;
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.listaFormulario li {
-    margin-bottom: 1rem;
-}
-
-/* labels */
 .listaFormulario label {
     display: block;
-    font-size: 0.9rem;
-    color: #444;
-    margin-bottom: 0.3rem;
+    color: #fff;
+    margin-bottom: 5px;
 }
 
-/* inputs */
 .listaFormulario input {
     width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.listaFormulario input:focus {
+    padding: 10px;
+    border-radius: 6px  ;
+    border: none;
     outline: none;
-    border-color: #c915ec;
-    box-shadow: 0 0 6px rgba(74, 144, 226, 0.4);
-}
-
-/* botão */
-.botaoEntrar {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #0e8d23;
-    color: white;
     font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-.botaoEntrar:hover {
-    background-color: #043f1a;
-}
-
-/* navegação */
+/* recuperar senha */
 .navegacaoLogin {
-    margin-top: 1rem;
+    margin-top: 15px;
     text-align: center;
 }
 
-#linkRecuperarSenha {
-    font-size: 0.9rem;
-    color: #4a90e2;
+.navegacaoLogin a {
+    color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 1.2rem;
+    transition: color ;
 }
 
-#linkRecuperarSenha:hover {
-    color: #357ab8;
+.navegacaoLogin a:hover {
     text-decoration: underline;
+    color: #9a1555;
 }
 
-
-
-/*TELA CADASTRO*/
-/* container da tela de cadastro */
-.containerCadastro {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #66094ac7, #ee9ce3);
-}
-
+/*PÁGINA DE CADASTRO*/
 /* formulário */
-#formCadastro {
-    background-color: #fff;
-    padding: 2rem;
-    border-radius: 7px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 550px;   
+form#formCadastro {
+    display: flex;
+    flex-direction: column;
 }
 
-#formCadastro fieldset {
+fieldset {
     border: none;
-    padding: 0;
-    margin: 0;
 }
 
-/* legenda */
-#formCadastro legend {
-    font-size: 1.6rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 1.5rem;
+legend {
+    font-size: 2rem;
+    color: #fff;
     text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
 }
 
-/* lista */
+/* lista do formulário */
 .listaCadastro {
     list-style: none;
-    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.listaCadastro li {
-    margin-bottom: 1rem;
-}
-
-/* labels */
 .listaCadastro label {
     display: block;
-    font-size: 0.95rem;
-    color: #444;
-    margin-bottom: 0.3rem;
+    color: #fff;
+    margin-bottom: 5px;
 }
 
-/* inputs */
 .listaCadastro input {
     width: 100%;
-    padding: 0.7rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: border-color 0.3s ease;
-}
-
-.listaCadastro input:focus {
-    outline: none;
-    border-color: #c915ec;
-    box-shadow: 0 0 6px rgba(80, 201, 195, 0.4);
-}
-
-/* botão para cadatrar */
-.botaoCadastrar {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: #0e8d23;
-    color: white;
-    font-size: 1rem;
-    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    outline: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-.botaoCadastrar:hover {
-    background-color: #043f1a;
+/*Botões de entrar e cadastrar*/
+.botaoEntrar,
+.botaoCadastrar {
+    display: block;          
+    width: 50%;               
+    margin: 20px auto 0;    
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #9b2564;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.botaoEntrar:hover,
+.botaoCadastrar:hover {
+    background: rgb(210, 29, 116);
+}
+
+/*PÁGINA DE LISTAR OS FILMES*/
+/* container da listagem de filmes */
+form {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px 50px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    font-size: 3rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+
