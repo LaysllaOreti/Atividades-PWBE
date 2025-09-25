@@ -9,51 +9,44 @@
   <body class="forms">
     <main class="container">
       <h1>Cadastro de Filmes</h1>
+
       <form class="formCadastro" action="/cadastro_filme" method="post">
-        <div class="groupForm cadastro">
+        <fieldset class="groupForm cadastro">
           <label for="titulo">Título do Filme</label>
           <input type="text" id="titulo" name="titulo" required />
-        </div>
+        </fieldset>
 
-        <div class="groupForm cadastro">
+        <fieldset class="groupForm cadastro">
           <label for="atores">Atores</label>
           <input type="text" id="atores" name="atores" />
-        </div>
+        </fieldset>
 
-        <div class="groupForm cadastro">
+        <fieldset class="groupForm cadastro">
           <label for="diretor">Diretor</label>
           <input type="text" id="diretor" name="diretor" />
-        </div>
+        </fieldset>
 
-        <div class="groupForm cadastro">
+        <fieldset class="groupForm cadastro">
           <label for="ano">Ano</label>
-          <input
-            type="number"
-            id="ano"
-            name="ano"
-            min="1900"
-            max="2100"
-          />
-        </div>
+          <input type="number" id="ano" name="ano" min="1900" max="2100" />
+        </fieldset>
 
-        <div class="groupForm cadastro">
+        <fieldset class="groupForm cadastro">
           <label for="genero">Gênero</label>
           <input type="text" id="genero" name="genero" />
-        </div>
+        </fieldset>
 
-        <div class="groupForm cadastro">
+        <fieldset class="groupForm cadastro">
           <label for="produtora">Produtora</label>
           <input type="text" id="produtora" name="produtora" />
-        </div>
+        </fieldset>
 
-        <div class="groupForm cadastro fullWidth">
+        <fieldset class="groupForm cadastro fullWidth">
           <label for="sinopse">Sinopse</label>
           <textarea id="sinopse" name="sinopse" rows="4"></textarea>
-        </div>
+        </fieldset>
 
-        <button type="submit" class="button fullWidth">
-          Cadastrar
-        </button>
+        <button type="submit" class="button fullWidth">Cadastrar</button>
       </form>
     </main>
   </body>

@@ -7,5 +7,14 @@
         "genero": "Fantasia",
         "produtora": "Walt Disney Picture Studio",
         "sinopse": "A rainha malvada morre de ciúmes da beleza de Branca de Neve e manda mata-la. Logo, descobre que a jovem não morreu e está morando na floresta com sete amiguinhos. A princesa então é envenenada pela rainha e só o beijo de um príncipe pode salvá-la."
+    },
+    {
+        "titulo": "Shrek",
+        "atores": "Shrek, Fiona, Burro",
+        "diretor": "Andrew Adamson",
+        "ano": "2001",
+        "genero": "Fantasia",
+        "produtora": "DreawWorks",
+        "sinopse": "Um ogro tem sua vida invadida por personagens de contos de fadas que acabam com a tranquilidade de seu lar. Ele faz um acordo pra resgatar uma princesa."
     }
 ]
