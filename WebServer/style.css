@@ -1,0 +1,162 @@
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: linear-gradient(to top, #c22573, #e991c1);
+}
+
+#titleMarquise {
+  color: #fdfdfd;
+}
+
+.forms {
+  padding: 30px;
+}
+
+.listMovies {
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fdfdfd;
+  padding: 40px;
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 36px;
+  color: #880857;
+  margin-bottom: 32px;
+}
+
+.formLogin {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formCadastro {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.cadastro {
+  flex-basis: calc(50% - 10px); /*flex-basics - define o tamanho inicial de um item*/
+  box-sizing: border-box;  
+}
+
+.groupForm {
+  text-align: left;
+}
+
+.groupForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.fullWidth {
+  flex-basis: 100%; /*flex-basics - define o tamanho inicial de um item*/
+}
+
+.groupForm input[type="text"],
+.groupForm input[type="password"],
+.groupForm input[type="number"],
+.groupForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #d2d1d1;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  transition: border-color 0.3s ease;
+}
+
+.groupForm input[type="text"]:focus,
+.groupForm input[type="password"]:focus,
+.groupForm input[type="number"]:focus,
+.groupForm textarea:focus {
+  border: 1px solid #921462;
+  outline: none;
+}
+
+.groupForm textarea {
+  resize: vertical;
+}
+
+.button {
+  background-color: #d40886;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background .3s ease;
+}
+
+.button:hover {
+  background-color: #921462;
+}
+
+.linkForgotPassword {
+  display: block;
+  margin-top: 10px;
+  color: #921462;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.linkForgotPassword:hover {
+  text-decoration: underline;
+  color: #921462;
+}
+
+#titleList {
+  color: #fdfdfd;
+}
+
+table {
+  border-collapse: collapse;
+  width: 98%;
+  font-size: 1.2rem;
+  margin: 20px auto;
+  background-color: #eceaea;
+}
+
+th, td {
+  border: 1px solid #921462;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #c74896;
+  font-weight: 500;
+  color: #fdfdfd;
+  padding: 4px;
+}
+
+td {
+  color: #000000;
+  font-weight: 500;
+}

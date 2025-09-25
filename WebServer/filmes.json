@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "titulo": "Branca de Neve e os Sete anões",
+        "atores": "Branca de neve, Rainha Má",
+        "diretor": "Wilfred Jackson",
+        "ano": "1937",
+        "genero": "Fantasia",
+        "produtora": "Walt Disney Picture Studio",
+        "sinopse": "A rainha malvada morre de ciúmes da beleza de Branca de Neve e manda mata-la. Logo, descobre que a jovem não morreu e está morando na floresta com sete amiguinhos. A princesa então é envenenada pela rainha e só o beijo de um príncipe pode salvá-la."
+    }
+]

@@ -1,32 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-    <main class="containerLogin">
-        <form action="/send_login" method="post" id="formLogin">
-            <fieldset>
-                <legend>Login</legend>
-                <ul class="listaFormulario">
-                    <li>
-                        <label for="usuarioInput">Usuario:</label>
-                        <input type="text" id="usuarioInput" name="usuario" maxlength="50" required>
-                    </li>
-                    <li>
-                        <label for="senhaInput">Senha:</label>
-                        <input type="password" id="senhaInput" name="senha" maxlength="15" required>
-                    </li>
-                </ul>
-                <button type="submit" class="botaoEntrar">Entrar</button>
-                <nav class="navegacaoLogin">
-                    <a href="#" id="linkRecuperarSenha">Esqueci minha senha</a>
-                </nav>
-            </fieldset>
-        </form>
-    </main>
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login | Marquise</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="forms">
+        <main class="container">
+            <h1>Login</h1>
+            <form class="formLogin" action="/send_login" method="post">
+                <div class="groupForm">
+                    <label for="usuario">E-mail</label>
+                    <input type="text" id="email" name="email" required />
+                </div>
+
+                <div class="groupForm">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required />
+                </div>
+
+                <button type="submit" class="button">Entrar</button>
+                <a href="#" class="linkForgotPassword">Esqueci minha senha</a>
+            </form>
+        </main>
+    </body>
 </html>
