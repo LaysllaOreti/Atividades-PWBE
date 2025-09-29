@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Editar Filme | Marquise</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <main class="forms">
+        <div class="container">
+            <h1>Editar Filme</h1>
+            
+            <!-- enctype adicionado para upload -->
+            <form action="/editar_filme" method="post" enctype="multipart/form-data" class="formLogin">
+                
+                <fieldset class="groupForm">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" name="titulo" value="{{ filme[1] }}" required/>
+                </fieldset>
+                
+                <fieldset class="groupForm">
+                    <label for="atores">Atores</label>
+                    <input type="text" id="atores" name="atores" value="{{ filme[2] }}"/>
+                </fieldset>
+                
+                <fieldset class="groupForm">
+                    <label for="diretor">Diretor</label>
+                    <input type="text" id="diretor" name="diretor" value="{{ filme[3] }}"/>
+                </fieldset>
+                
+                <fieldset class="groupForm">
+                    <label for="ano">Ano</label>
+                    <input type="number" id="ano" name="ano" value="{{ filme[4] }}" required />
+                </fieldset>
+                
+                <fieldset class="groupForm">
+                    <label for="genero">Gênero</label>
+                    <input type="text" id="genero" name="genero" value="{{ filme[5] }}"/>
+                </fieldset>
+                
+                <fieldset class="groupForm">
+                    <label for="produtora">Produtora</label>
+                    <input type="text" id="produtora" name="produtora" value="{{ filme[6] }}"/>
+                </fieldset>
+                
+                <fieldset class="groupForm">
+                    <label for="sinopse">Sinopse</label>
+                    <textarea id="sinopse" name="sinopse" rows="4">{{ filme[7] }}</textarea>
+                </fieldset>
+                
+                <!-- agora é possível alterar a imagem de capa do filme -->
+                <fieldset class="groupForm">
+                    <label for="capaUrl">Imagem de Capa (URL)</label>
+                    <input type="url" id="capaUrl" name="capaUrl" 
+                    value="{% if filme[9] %}{{ filme[9] }}{% endif %}" 
+                    placeholder="https://exemplo.com/capa.jpg"/>
+                </fieldset>
+                
+                <input type="hidden" name="titulo_antigo" value="{{ filme[1] }}">
+                
+                <button type="submit" class="button">Salvar Alterações</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

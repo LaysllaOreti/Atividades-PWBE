@@ -16,5 +16,24 @@
         "genero": "Fantasia",
         "produtora": "DreawWorks",
         "sinopse": "Um ogro tem sua vida invadida por personagens de contos de fadas que acabam com a tranquilidade de seu lar. Ele faz um acordo pra resgatar uma princesa."
+    },
+    {
+        "titulo": "A Bela e a Fera",
+        "atores": "Bela, Fera, Gaston",
+        "diretor": "Gary Trousdale",
+        "ano": "1991",
+        "genero": "Fantasia",
+        "produtora": "Walt Disney Animation Picture",
+        "sinopse": "A jovem Bela está cansada da vida provinciana de uma pequena cidade francesa, onde vive também o galã Gastón que, apesar de derreter corações, não consegue conquistá-la com seu jeito grosseiro. Maurice, o pai de Bela, viaja para expor uma de suas invenções e acaba preso em um castelo onde vive uma temível Fera, que precisa encontrar o verdadeiro amor e ser correspondido para quebrar um feitiço e voltar a ser príncipe. Em troca da liberdade do pai, Bela aceita ficar presa no castelo para sempre."
+    },
+    {
+        "titulo": "A bela e a fera",
+        "atores": "bela, fera, gaston",
+        "diretor": "Gary Trousdale",
+        "ano": "1991",
+        "genero": "Fantasia",
+        "produtora": "Walt Disney Animation Picture",
+        "sinopse": "A jovem Bela está cansada da vida provinciana de uma pequena cidade francesa, onde vive também o galã Gastón que, apesar de derreter corações, não consegue conquistá-la com seu jeito grosseiro. Maurice, o pai de Bela, viaja para expor uma de suas invenções e acaba preso em um castelo onde vive uma temível Fera, que precisa encontrar o verdadeiro amor e ser correspondido para quebrar um feitiço e voltar a ser príncipe. Em troca da liberdade do pai, Bela aceita ficar presa no castelo para sempre.",
+        "capa": ""
     }
 ]
