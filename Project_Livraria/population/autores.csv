@@ -1,7 +1,5 @@
-﻿nome, sobrenome, data_nascimento, nacao
-Joaquim Maria,Machado de Assis,1839-06-21,brasileira
-Joaquim Maria,Machado de Assis,1839-06-21,brasileira
-
+﻿nome,sobrenome,data_nascimento,nacionalidade
+Joaquim Maria,Machado de Assis,1839-06-21,Brasileira
 Jorge,Amado,1912-08-10,Brasileira
 Clarice,Lispector,1920-12-10,Brasileira
 Paulo,Coelho,1947-08-24,Brasileira

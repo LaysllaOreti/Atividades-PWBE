@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import *
-
+from . import views
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -12,36 +12,31 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Your API Title",
+      title="API Livraria",
       default_version='v1',
-      description="Test description",
-      terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="contact@yourapi.local"),
-      license=openapi.License(name="BSD License"),
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
 )
 
 
-# Crio os endpoints
 urlpatterns = [
-    path('autores/', AutoresView.as_view()),   # CRUD autores
-    path('authors/', visualizacao_autor),      # rota extra
-    path('editoras/', EditoraView.as_view()),
-    path('livros/', LivroView.as_view()),
-    path('search/', AutoresView.as_view()),
+    path("Autores/", views.listar_autores, name='listar-autores'),
+    path("Autores/<int:pk>/", views.detalhes_autores, name='detalhes-autores'),
+    
+    path("Editoras/", views.listar_editoras, name='listar-editoras'),
+    path("Editoras/<int:pk>/", views.detalhes_editoras, name='detalhes-editoras'),
 
-    path('autor/<int:pk>/', AutoresCrud.as_view()),
-    path('editora/<int:pk>/', EditoraCrud.as_view()),
-    path('livro/<int:pk>/', LivroCrud.as_view()),
+    path("Livros/", views.listar_livros, name='listar-livros'),
+    path("Livros/<int:pk>/", views.detalhes_livros, name='detalhes-livros'),
 
-    # TOKEN
+    # Token
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
-    # SWAGGER
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('swagger.json', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    
 ]
+
