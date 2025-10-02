@@ -15,13 +15,18 @@ body {
   background: linear-gradient(to top, #c22573, #e991c1);
 }
 
+.titleHome {
+  text-align: center;
+  color: #d2d1d1;
+}
+
 .forms {
   padding: 30px;
 }
 
 .container {
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
   background-color: #fff;
   padding: 40px;
   border-radius: 4px;
@@ -54,6 +59,10 @@ h1 {
   color: #000;
 }
 
+label {
+  text-decoration: none;
+}
+
 .groupForm input {
   width: 100%;
   padding: 12px 15px;
@@ -70,19 +79,19 @@ h1 {
 
 /* Botão */
 .button {
-  background-color: #d40886;
+  background-color: #0c8527;
   color: #fff;
-  padding: 12px 20px;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 2px;
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: 1rem;
   font-weight: bold;
   transition: background 0.3s ease;
 }
 
 .button:hover {
-  background-color: #921462;
+  background-color: #016517;
 }
 
 /* Link */
@@ -133,4 +142,48 @@ th {
 td {
   color: #000;
   font-weight: 500;
+}
+
+/* área dos botões de editar */
+.actionButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.buttonCancel {
+  margin-top: 20px;
+  background-color: #9c0c0c;
+  padding: 8px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  color: #ffffff;
+}
+
+.buttonCancel:hover {
+  background-color: #999;
+}
+
+.buttonVoltarCadastro {
+  margin-top: 20px;
+  background-color: #ebc3dc;
+  padding: 8px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  color: #921462;
+  margin-left: 20px;
+}
+
+.buttonVoltarCadastro:hover {
+  background-color: #921462;
+  color: #eceaea;
 }
